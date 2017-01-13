@@ -2,13 +2,12 @@ import re
 
 pattern = re.compile("\d+[+\-*\/\^]\d+")
 
-equation = raw_input("What would you like to calculate?")
-
 while True:
+    equation = raw_input("What would you like to calculate?\n")
     if pattern.match(equation):
         break
-
-    print "Not a valid input."
+    else:
+        print "Not a valid input.\n"
 
 
 if "+" in equation:
@@ -25,7 +24,7 @@ elif "*" in equation:
     
 elif "/" in equation:
     equation =equation.split("/")
-    print int(equation[0]) / int(equation[1])
+    print float(equation[0]) / float(equation[1])
 
 elif "^" in equation:
     equation = equation.split("^")
